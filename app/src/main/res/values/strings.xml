@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">MyRecipeApp</string>
+    <string name="app_name" translatable="false">MyRecipeApp</string>
+    <string name="login_page" translatable="false">Recipe app login page</string>
 </resources>

@@ -1,4 +1,4 @@
-package com.example.recipeapp;
+package com.example.myrecipeapp;
 
 import android.os.Bundle;
 import android.widget.ImageView;
