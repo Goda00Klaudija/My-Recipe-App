@@ -17,7 +17,7 @@ public class MealCategories extends AppCompatActivity {
 
         btnGlutenFree = findViewById(R.id.buttonGlutenFree);
         btnIngredient = findViewById(R.id.buttonIngredient);
-        btnMeat = findViewById(R.id.buttonCategory);
+        btnMeat = findViewById(R.id.buttonMeat);
         btnSalads = findViewById(R.id.buttonSalads);
         btnVegetarian = findViewById(R.id.buttonVeg);
         btnSeaFood = findViewById(R.id.buttonSeaFood);

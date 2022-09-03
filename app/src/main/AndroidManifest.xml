@@ -56,7 +56,7 @@
             android:name=".SaladList"
             android:exported="false" />
         <activity
-            android:name=".VegeterianList"
+            android:name=".VegetarianList"
             android:exported="false" />
         <activity
             android:name=".SeaFoodList"
