@@ -24,7 +24,6 @@ public class LoadingScreen extends AppCompatActivity {
         progressBar.setMax(100);
         progressBar.setScaleY(3f);
         progressAnimation();
-
     }
 
     public void progressAnimation(){

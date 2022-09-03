@@ -10,7 +10,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class WelcomePage extends AppCompatActivity {
 
     private EditText username, password;
     private Button loginBtn, registerBtn;
@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_welcome);
 
         DBHelper = new DBHelper(getApplicationContext());
         username = findViewById(R.id.editTextUsername);
@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         registerBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(MainActivity.this, RegisterPage.class);
+                Intent i = new Intent(WelcomePage.this, RegisterPage.class);
                 startActivity(i);
             }
         });
@@ -54,15 +54,15 @@ public class MainActivity extends AppCompatActivity {
                     String pass = password.getText().toString();
 
                     if(user.equals("")|| pass.equals("")){
-                        Toast.makeText(MainActivity.this, "Please enter all the fields", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(WelcomePage.this, "Please enter all the fields", Toast.LENGTH_SHORT).show();
                     }else{
                         Boolean checkUserPass = DBHelper.checkUsernamePassword(user, pass);
                         if(checkUserPass == true){
-                            Toast.makeText(MainActivity.this, "Sign in successfull!", Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(MainActivity.this, MyAccount.class);
+                            Toast.makeText(WelcomePage.this, "Sign in successfull!", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(WelcomePage.this, MyAccount.class);
                             startActivity(intent);
                         }else{
-                            Toast.makeText(MainActivity.this, "Invalid credentials", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(WelcomePage.this, "Invalid credentials", Toast.LENGTH_SHORT).show();
                         }
                     }
                 }
@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
         forgotPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, ForgotPaassword.class);
+                Intent intent = new Intent(WelcomePage.this, ForgotPaassword.class);
                 startActivity(intent);
             }
         });

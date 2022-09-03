@@ -1,20 +1,33 @@
 package com.example.myrecipeapp;
+import android.content.Intent;
 import android.os.Bundle;
-import android.widget.TextView;
+import android.view.View;
+import android.widget.LinearLayout;
+
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.myrecipeapp.ListRecipe;
 
 public class ListRecipe extends AppCompatActivity {
-    private TextView text;
 
-    public ListRecipe() {
-    }
+    private LinearLayout mealBox;
 
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-    }
+        setContentView(R.layout.list_recipe);
 
-//    private void goToRegister() {
-//        this.text.setOnClickListener(new (this));
-//    }
+        mealBox = findViewById(R.id.mealBox);
+
+        goToDetails();
+    }
+    private void goToDetails() {
+        mealBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(ListRecipe.this, RecipeDetailsActivity.class);
+                startActivity(i);
+            }
+        });
+    }
 }

@@ -5,8 +5,8 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:background="@color/grey"
-    tools:context=".MainActivity">
+    tools:context=".RecipeDetailsActivity"
+    android:background="@color/grey">
     <androidx.appcompat.widget.Toolbar
         app:title="All you need to know!"
         app:titleTextColor="@color/white"

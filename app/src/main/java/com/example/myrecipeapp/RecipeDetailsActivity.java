@@ -8,25 +8,22 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class RecipeDetailsActivity extends AppCompatActivity {
     int id;
-    TextView textView_meal_name;
-    TextView textView_meal_method;
-    ImageView imageView_meal_image;
-    RecyclerView recycler_meal_ingredients;
 
-    public RecipeDetailsActivity() {
-    }
+    public TextView textView_meal_name, textView_meal_method;
+    public ImageView imageView_meal_image;
+    public RecyclerView recycler_meal_ingredients;
 
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.setContentView(2131427357);
-        this.findViews();
-        this.id = Integer.parseInt(this.getIntent().getStringExtra("id"));
+        setContentView(R.layout.activity_recipe_details);
+        findViews();
     }
 
     private void findViews() {
-        this.textView_meal_name = (TextView)this.findViewById(2131231171);
-        this.textView_meal_method = (TextView)this.findViewById(2131231170);
-        this.imageView_meal_image = (ImageView)this.findViewById(2131230946);
-        this.recycler_meal_ingredients = (RecyclerView)this.findViewById(2131231067);
+        this.textView_meal_name = (TextView)this.findViewById(R.id.textView_meal_name);
+        this.textView_meal_method = (TextView)this.findViewById(R.id.textView_meal_method);
+        this.imageView_meal_image = (ImageView)this.findViewById(R.id.imageView_meal_image);
+        this.recycler_meal_ingredients = (RecyclerView)this.findViewById(R.id.recycler_meal_ingredients);
     }
 }

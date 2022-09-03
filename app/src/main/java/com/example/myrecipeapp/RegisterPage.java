@@ -49,7 +49,7 @@ public class RegisterPage extends AppCompatActivity {
                             Boolean insert = dbHelper.addData(dbEmail, dbUsername, dbPassword);
                             if(insert==true){
                                 Toast.makeText(RegisterPage.this, "Registered successfully", Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(RegisterPage.this, MainActivity.class);
+                                Intent intent = new Intent(RegisterPage.this, WelcomePage.class);
                                 startActivity(intent);
                             }else{
                                 Toast.makeText(RegisterPage.this, "Registration failed", Toast.LENGTH_SHORT).show();

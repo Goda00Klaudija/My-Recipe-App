@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey"
+    android:orientation="vertical"
+    tools:context=".MealCategories">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:orientation="horizontal"
+        android:layout_margin="25dp">
+        <Button
+            android:id="@+id/buttonIngredient"
+            android:layout_width="130dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:text="Search By Ingredient"
+            android:layout_marginRight="30dp"/>
+
+        <Button
+            android:id="@+id/buttonMeat"
+            android:layout_width="132dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:text="Meat" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:orientation="horizontal"
+        android:layout_margin="25dp">
+        <Button
+            android:id="@+id/buttonSeaFood"
+            android:layout_width="130dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:text="Sea Food"
+            android:layout_marginRight="30dp"/>
+
+        <Button
+            android:id="@+id/buttonSalads"
+            android:layout_width="132dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:text="Salads" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:orientation="horizontal"
+        android:layout_margin="25dp">
+        <Button
+            android:id="@+id/buttonVeg"
+            android:layout_width="130dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:text="Vegetarian"
+            android:layout_marginRight="30dp"/>
+
+        <Button
+            android:id="@+id/buttonGlutenFree"
+            android:layout_width="132dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:text="Gluten Free" />
+    </LinearLayout>
+</LinearLayout>

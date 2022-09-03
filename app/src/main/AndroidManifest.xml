@@ -20,7 +20,7 @@
             android:name=".MyAccount"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".WelcomePage"
             android:exported="false" />
         <activity
             android:name=".RegisterPage"
@@ -33,6 +33,36 @@
             android:exported="false" />
         <activity
             android:name=".SearchScreen"
+            android:exported="false" />
+        <activity
+            android:name=".MainPage"
+            android:exported="false" />
+        <activity
+            android:name=".AllRecipeSearch"
+            android:exported="false" />
+        <activity
+            android:name=".GlutenFreeList"
+            android:exported="false" />
+        <activity
+            android:name=".IngredientList"
+            android:exported="false" />
+        <activity
+            android:name=".MealCategories"
+            android:exported="false" />
+        <activity
+            android:name=".MeatList"
+            android:exported="false" />
+        <activity
+            android:name=".SaladList"
+            android:exported="false" />
+        <activity
+            android:name=".VegeterianList"
+            android:exported="false" />
+        <activity
+            android:name=".SeaFoodList"
+            android:exported="false" />
+        <activity
+            android:name=".ProgressBarAnimation"
             android:exported="false" />
         <activity
             android:name=".LoadingScreen"
