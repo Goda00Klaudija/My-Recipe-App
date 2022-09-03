@@ -22,16 +22,13 @@ public class MainPage extends AppCompatActivity {
         btnAllRecipes = findViewById(R.id.buttonAllRecipes);
         btnCategory = findViewById(R.id.buttonCategory);
 
-        goToDetails();
         goToAllRecipes();
         goToCategories();
-    }
-    private void goToDetails() {
+
         DayBox.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(MainPage.this, RecipeDetailsActivity.class);
-                startActivity(i);
+                startActivity(new Intent(MainPage.this, RecipeDetailsActivity.class));
             }
         });
     }

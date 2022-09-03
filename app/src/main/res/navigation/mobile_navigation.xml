@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/my_account">
+
+    <fragment
+        android:id="@+id/my_account"
+        android:name="com.example.myrecipeapp.ui.myaccount.MyAccountFragment"
+        android:label="@string/MyAccount"
+        tools:layout="@layout/fragment_my_account" />
+
+    <fragment
+        android:id="@+id/my_pantry"
+        android:name="com.example.myrecipeapp.ui.mypantry.MyPantryFragment"
+        android:label="@string/MyPantry"
+        tools:layout="@layout/fragment_my_pantry" />
+
+    <fragment
+        android:id="@+id/saved_recipes"
+        android:name="com.example.myrecipeapp.ui.savedrecipes.SavedRecipesFragment"
+        android:label="@string/MySavedRecipes"
+        tools:layout="@layout/fragment_save_recipes" />
+</navigation>
