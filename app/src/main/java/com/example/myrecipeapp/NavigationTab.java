@@ -1,5 +1,6 @@
 package com.example.myrecipeapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
@@ -20,6 +21,8 @@ public class NavigationTab extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityNavigationTabBinding binding;
+//    private group my_account;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +39,12 @@ public class NavigationTab extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+//        myaccount.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                startActivity(new Intent(MainPage.this, RecipeDetailsActivity.class));
+//            }
+//        });
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
         // Passing each menu ID as a set of Ids because each

@@ -16,7 +16,7 @@ public class MainPage extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_page);
+        setContentView(R.layout.nav_main_page);
 
         DayBox = findViewById(R.id.mainBox);
         btnAllRecipes = findViewById(R.id.buttonAllRecipes);

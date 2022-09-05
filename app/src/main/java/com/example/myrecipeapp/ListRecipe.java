@@ -5,7 +5,6 @@ import android.view.View;
 import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
-import com.example.myrecipeapp.ListRecipe;
 
 public class ListRecipe extends AppCompatActivity {
 
@@ -15,7 +14,7 @@ public class ListRecipe extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.list_recipe);
+        setContentView(R.layout.activity_list_recipe);
 
         mealBox = findViewById(R.id.mealBox);
 

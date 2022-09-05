@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name" translatable="false">Your Pantry</string>
+    <string name="app_name" translatable="false">Your Pantry - Our Recipe</string>
     <string name="login_page" translatable="false">Recipe app login page</string>
     <string name="title_activity_navigation_tab">NavigationTab</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -12,4 +12,5 @@
     <string name="MyAccount">My Account</string>
     <string name="MyPantry">My Pantry</string>
     <string name="MySavedRecipes">My Saved Recipes</string>
+    <string name="Username">username</string>
 </resources>
