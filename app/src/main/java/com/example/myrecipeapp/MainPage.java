@@ -6,17 +6,17 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
-import com.example.myrecipeapp.ListRecipe;
 
 public class MainPage extends AppCompatActivity {
 
     private LinearLayout DayBox;
     public Button btnAllRecipes, btnCategory;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.nav_main_page);
+        setContentView(R.layout.activity_main_page);
 
         DayBox = findViewById(R.id.mainBox);
         btnAllRecipes = findViewById(R.id.buttonAllRecipes);
@@ -32,6 +32,16 @@ public class MainPage extends AppCompatActivity {
             }
         });
     }
+
+//    private void goToTab() {
+//        btnCategory.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent i = new Intent(MainPageFragment.this, MealCategories.class);
+//                startActivity(i);
+//            }
+//        });
+//    }
 
     private void goToAllRecipes() {
         btnAllRecipes.setOnClickListener(new View.OnClickListener() {

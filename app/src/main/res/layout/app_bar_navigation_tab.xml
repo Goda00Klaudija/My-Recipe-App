@@ -5,18 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".NavigationTab">
+<!--    android:id="@+id/app_bar_navigation_tab">-->
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/Theme.MyRecipeApp.AppBarOverlay">
-
+        android:background="@color/trans">
+<!--        android:theme="@style/Theme.MyRecipeApp.AppBarOverlay"-->
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/Theme.MyRecipeApp.PopupOverlay" />
+            android:background="@drawable/wallpaper"/>
+<!--            app:popupTheme="@style/Theme.MyRecipeApp.PopupOverlay" />-->
 
     </com.google.android.material.appbar.AppBarLayout>
 

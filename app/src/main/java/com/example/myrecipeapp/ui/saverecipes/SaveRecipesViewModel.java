@@ -1,14 +1,14 @@
-package com.example.myrecipeapp.ui.savedrecipes;
+package com.example.myrecipeapp.ui.saverecipes;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class SavedRecipesViewModel extends ViewModel {
+public class SaveRecipesViewModel extends ViewModel {
 
     private final MutableLiveData<String> mText;
 
-    public SavedRecipesViewModel() {
+    public SaveRecipesViewModel() {
         mText = new MutableLiveData<>();
         mText.setValue("This is saved recipes fragment");
     }

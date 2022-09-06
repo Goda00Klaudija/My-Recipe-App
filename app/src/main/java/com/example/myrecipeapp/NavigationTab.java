@@ -1,6 +1,5 @@
 package com.example.myrecipeapp;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
@@ -21,8 +20,6 @@ public class NavigationTab extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityNavigationTabBinding binding;
-//    private group my_account;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,18 +36,12 @@ public class NavigationTab extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-//        myaccount.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                startActivity(new Intent(MainPage.this, RecipeDetailsActivity.class));
-//            }
-//        });
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.my_account, R.id.my_pantry, R.id.saved_recipes)
+                R.id.nav_mainpage, R.id.nav_myaccount, R.id.nav_mypantry, R.id.nav_saverecipes)
                 .setOpenableLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_navigation_tab);

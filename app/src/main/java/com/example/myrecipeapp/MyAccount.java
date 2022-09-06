@@ -1,11 +1,19 @@
 package com.example.myrecipeapp;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.LifecycleOwner;
+import androidx.lifecycle.ViewModelProvider;
+
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
+import androidx.fragment.app.Fragment;
 
 public class MyAccount extends AppCompatActivity {
 
@@ -79,9 +87,9 @@ public class MyAccount extends AppCompatActivity {
         }
     }
 
-    private void saveImage(){
+    private void saveImage() {
         String path = IVPreviewImage.getContext().getPackageResourcePath();
         dbHelper.addPicture(path);
     }
-
 }
+

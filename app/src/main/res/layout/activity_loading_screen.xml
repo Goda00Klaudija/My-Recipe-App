@@ -6,8 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".LoadingScreen"
     android:padding="16dp"
-    android:background="@color/grey">
-<!--    android:background="@drawable/loading_background">-->
+    android:background="@drawable/wallpaper">
 
     <TextView
         android:layout_width="wrap_content"
@@ -27,5 +26,14 @@
         style="@style/Widget.AppCompat.ProgressBar.Horizontal"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="20dp"/>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:srcCompat="@drawable/reallogo"
+        android:src="@drawable/reallogo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="200dp"/>
 
 </RelativeLayout>

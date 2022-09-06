@@ -16,14 +16,14 @@ public class MyPantryFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        MyPantryViewModel galleryViewModel =
+        MyPantryViewModel myPantryViewModel =
                 new ViewModelProvider(this).get(MyPantryViewModel.class);
 
         binding = FragmentMyPantryBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textGallery;
-        galleryViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        final TextView textView = binding.textMypantry;
+        myPantryViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
 

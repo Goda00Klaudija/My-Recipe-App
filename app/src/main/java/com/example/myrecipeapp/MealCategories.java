@@ -13,7 +13,7 @@ public class MealCategories extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.nav_meal_categories);
+        setContentView(R.layout.activity_meal_categories);
 
         btnGlutenFree = findViewById(R.id.buttonGlutenFree);
         btnIngredient = findViewById(R.id.buttonIngredient);
