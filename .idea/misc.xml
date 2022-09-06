@@ -3,11 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.223" />
+        <entry key="app/src/main/res/drawable/ic_baseline_email_24.xml" value="0.223" />
         <entry key="app/src/main/res/drawable/ic_baseline_lock_24.xml" value="0.207" />
         <entry key="app/src/main/res/drawable/ic_baseline_person_outline_24.xml" value="0.207" />
         <entry key="app/src/main/res/drawable/ic_baseline_star_24.xml" value="0.207" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_menu_camera.xml" value="0.2005" />
+        <entry key="app/src/main/res/drawable/ic_menu_gallery.xml" value="0.223" />
+        <entry key="app/src/main/res/drawable/ic_menu_slideshow.xml" value="0.223" />
         <entry key="app/src/main/res/drawable/ic_search.xml" value="0.2005" />
         <entry key="app/src/main/res/drawable/ic_tab.xml" value="0.2005" />
         <entry key="app/src/main/res/drawable/search.xml" value="0.1" />
@@ -20,10 +24,10 @@
         <entry key="app/src/main/res/layout/activity_list_recipe_search.xml" value="0.31658782958984377" />
         <entry key="app/src/main/res/layout/activity_loading_screen.xml" value="0.2611111111111111" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.30447082519531254" />
-        <entry key="app/src/main/res/layout/activity_main_page.xml" value="0.27759101269981284" />
+        <entry key="app/src/main/res/layout/activity_main_page.xml" value="0.42751922607421877" />
         <entry key="app/src/main/res/layout/activity_meal_categories.xml" value="0.184375" />
         <entry key="app/src/main/res/layout/activity_meat_list.xml" value="0.296875" />
-        <entry key="app/src/main/res/layout/activity_my_account.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_my_account.xml" value="0.30727386474609375" />
         <entry key="app/src/main/res/layout/activity_navigation.xml" value="0.20372263590494788" />
         <entry key="app/src/main/res/layout/activity_navigation_tab.xml" value="0.17549743652343752" />
         <entry key="app/src/main/res/layout/activity_recipe_details.xml" value="0.20989583333333334" />

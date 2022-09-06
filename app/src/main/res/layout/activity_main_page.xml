@@ -69,7 +69,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:background="@color/white"
+        android:background="@color/mirror2"
         android:orientation="vertical"
         android:padding="8dp">
         <ImageView
@@ -90,7 +90,7 @@
             android:scrollHorizontally="true"
             android:singleLine="true"
             android:text="Dish Name"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold" />
         <TextView
@@ -100,7 +100,7 @@
             android:layout_margin="0.7dp"
             android:padding="28dp"
             android:text="*summary*"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="15sp"
             android:textStyle="normal" />
     </LinearLayout>
@@ -117,7 +117,8 @@
             android:layout_gravity="center"
             android:layout_weight="1"
             android:text="Search By Category"
-            android:layout_marginRight="30dp"/>
+            android:layout_marginRight="30dp"
+            android:backgroundTint="@color/mirror2"/>
 
         <Button
             android:id="@+id/buttonAllRecipes"
@@ -125,7 +126,8 @@
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:layout_weight="1"
-            android:text="All Recipes" />
+            android:text="All Recipes"
+            android:backgroundTint="@color/mirror2"/>
     </LinearLayout>
 
 </LinearLayout>

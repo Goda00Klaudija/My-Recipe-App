@@ -8,10 +8,9 @@ public class MainPageViewModel extends ViewModel {
 
 //    private final MutableLiveData<String> mText;
 
-//    public MainPageViewModel() {
-//        mText = new MutableLiveData<>();
-//        mText.setValue("This is main page fragment");
-//    }
+    public MainPageViewModel() {
+
+    }
 
 //    public LiveData<String> getText() {
 //        return mText;

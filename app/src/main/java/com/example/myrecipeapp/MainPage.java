@@ -33,16 +33,6 @@ public class MainPage extends AppCompatActivity {
         });
     }
 
-//    private void goToTab() {
-//        btnCategory.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent i = new Intent(MainPageFragment.this, MealCategories.class);
-//                startActivity(i);
-//            }
-//        });
-//    }
-
     private void goToAllRecipes() {
         btnAllRecipes.setOnClickListener(new View.OnClickListener() {
             @Override

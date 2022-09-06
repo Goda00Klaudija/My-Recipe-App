@@ -17,4 +17,12 @@
             android:id="@+id/nav_saverecipes"
             android:title="@string/MySavedRecipes" />
     </group>
+
+
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/action_settings"
+            android:title="@string/action_settings" />
+    </group>
 </menu>
