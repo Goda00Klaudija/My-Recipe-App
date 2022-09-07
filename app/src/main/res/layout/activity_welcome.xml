@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".WelcomePage"
-    android:background="@drawable/foodbackground">
+    android:background="@drawable/wallpaper">
 
     <TextView
         android:id="@+id/textView"
@@ -31,6 +31,7 @@
         android:hint="Username"
         android:backgroundTint="@color/white"
         android:inputType="textPersonName"
+        android:drawableTint="@color/white"
         android:textColorHint="@color/white"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
@@ -56,7 +57,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="560dp"
-        android:backgroundTint="@color/black"
+        android:backgroundTint="@color/mirror2"
         android:text="Register"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
@@ -68,7 +69,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="464dp"
-        android:backgroundTint="@color/black"
+        android:backgroundTint="@color/mirror2"
         android:text="Sign in"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -86,6 +87,7 @@
         android:inputType="textPassword"
         android:textColorHint="@color/white"
         android:textColor="@color/white"
+        android:drawableTint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"

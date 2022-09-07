@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".RegisterPage"
-    android:background="@drawable/foodbackground">
+    android:background="@drawable/wallpaper">
 
 
     <TextView
@@ -42,6 +42,7 @@
         android:id="@+id/edtTextRegisterUsername"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:drawableTint="@color/white"
         android:layout_marginTop="332dp"
         android:backgroundTint="@color/white"
         android:drawableLeft="@drawable/ic_baseline_person_outline_24"
@@ -62,6 +63,7 @@
         android:layout_marginTop="268dp"
         android:backgroundTint="@color/white"
         android:drawableLeft="@drawable/ic_baseline_email_24"
+        android:drawableTint="@color/white"
         android:ems="10"
         android:hint="E-mail"
         android:inputType="textPersonName"
@@ -78,6 +80,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="392dp"
         android:backgroundTint="@color/white"
+        android:drawableTint="@color/white"
         android:drawableLeft="@drawable/ic_baseline_lock_24"
         android:ems="10"
         android:hint="Password"
@@ -94,6 +97,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="460dp"
+        android:drawableTint="@color/white"
         android:backgroundTint="@color/white"
         android:drawableLeft="@drawable/ic_baseline_lock_24"
         android:ems="10"
@@ -110,7 +114,7 @@
         android:id="@+id/btnRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/black"
+        android:backgroundTint="@color/mirror2"
         android:text="Create a new account"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
