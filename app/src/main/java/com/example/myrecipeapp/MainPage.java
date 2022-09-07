@@ -9,6 +9,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainPage extends AppCompatActivity {
 
+    //test
+
     private LinearLayout DayBox;
     public Button btnAllRecipes, btnCategory;
 
