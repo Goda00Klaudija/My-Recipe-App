@@ -3,10 +3,33 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AndroidStudioProjects/My-Recipe-App/app/src/main/res/drawable/ic_menu_camera.xml" value="0.2" />
+        <entry key="..\:/AndroidStudioProjects/My-Recipe-App/app/src/main/res/layout/activity_all_recipe_search.xml" value="0.264" />
+        <entry key="..\:/AndroidStudioProjects/My-Recipe-App/app/src/main/res/layout/activity_forgot_paassword.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidStudioProjects/My-Recipe-App/app/src/main/res/layout/activity_gluten_free_list.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidStudioProjects/My-Recipe-App/app/src/main/res/layout/activity_ingredient_list.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidStudioProjects/My-Recipe-App/app/src/main/res/layout/activity_list_meal_ingredients.xml" value="0.25416666666666665" />
         <entry key="..\:/AndroidStudioProjects/My-Recipe-App/app/src/main/res/layout/activity_list_recipe.xml" value="0.25416666666666665" />
         <entry key="..\:/AndroidStudioProjects/My-Recipe-App/app/src/main/res/layout/activity_loading_screen.xml" value="0.25416666666666665" />
         <entry key="..\:/AndroidStudioProjects/My-Recipe-App/app/src/main/res/layout/activity_main_page.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidStudioProjects/My-Recipe-App/app/src/main/res/layout/activity_meal_categories.xml" value="0.25416666666666665" />
         <entry key="..\:/AndroidStudioProjects/My-Recipe-App/app/src/main/res/layout/activity_meat_list.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidStudioProjects/My-Recipe-App/app/src/main/res/layout/activity_my_account.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidStudioProjects/My-Recipe-App/app/src/main/res/layout/activity_navigation_tab.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidStudioProjects/My-Recipe-App/app/src/main/res/layout/activity_recipe_details.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidStudioProjects/My-Recipe-App/app/src/main/res/layout/activity_register_page.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidStudioProjects/My-Recipe-App/app/src/main/res/layout/activity_salad_list.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidStudioProjects/My-Recipe-App/app/src/main/res/layout/activity_sea_food_list.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidStudioProjects/My-Recipe-App/app/src/main/res/layout/activity_search_screen.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidStudioProjects/My-Recipe-App/app/src/main/res/layout/activity_vegetarian_list.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidStudioProjects/My-Recipe-App/app/src/main/res/layout/activity_welcome.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidStudioProjects/My-Recipe-App/app/src/main/res/layout/app_bar_navigation_tab.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidStudioProjects/My-Recipe-App/app/src/main/res/layout/content_navigation_tab.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidStudioProjects/My-Recipe-App/app/src/main/res/layout/fragment_main_page.xml" value="0.11296296296296296" />
+        <entry key="..\:/AndroidStudioProjects/My-Recipe-App/app/src/main/res/layout/fragment_my_account.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidStudioProjects/My-Recipe-App/app/src/main/res/layout/fragment_my_pantry.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidStudioProjects/My-Recipe-App/app/src/main/res/layout/fragment_save_recipes.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidStudioProjects/My-Recipe-App/app/src/main/res/layout/nav_header_navigation_tab.xml" value="0.25416666666666665" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.223" />
         <entry key="app/src/main/res/drawable/ic_baseline_email_24.xml" value="0.223" />
         <entry key="app/src/main/res/drawable/ic_baseline_lock_24.xml" value="0.207" />

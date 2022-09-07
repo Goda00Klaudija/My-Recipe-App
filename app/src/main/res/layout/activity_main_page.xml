@@ -50,7 +50,8 @@
             android:gravity="center"
             app:iconifiedByDefault="false"
             app:queryHint="Search for recipe..."
-            app:searchIcon="@drawable/ic_search" />
+            app:searchIcon="@drawable/ic_search"
+            android:backgroundTint="@color/mirror2"/>
     </androidx.cardview.widget.CardView>
 
     <TextView

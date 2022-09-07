@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/grey"
+    android:background="@drawable/wallpaper"
     android:orientation="vertical"
     tools:context=".GlutenFreeList">
 
@@ -38,7 +38,7 @@
 
     <androidx.cardview.widget.CardView
         app:cardElevation="8dp"
-        app:cardBackgroundColor="@color/grey"
+        app:cardBackgroundColor="@color/mirror2"
         android:layout_margin="8dp"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize">

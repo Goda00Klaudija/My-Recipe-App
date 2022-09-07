@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".RecipeDetailsActivity"
-    android:background="@color/purple">
+    android:background="@drawable/wallpaper">
     <androidx.appcompat.widget.Toolbar
         app:title="All you need to know!"
         app:titleTextColor="@color/white"

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/grey"
+    android:background="@drawable/wallpaper"
     android:orientation="vertical"
     tools:context=".MealCategories">
 
@@ -20,7 +20,8 @@
             android:layout_gravity="center"
             android:layout_weight="1"
             android:text="Search By Ingredient"
-            android:layout_marginRight="30dp"/>
+            android:layout_marginRight="30dp"
+            android:backgroundTint="@color/mirror2"/>
 
         <Button
             android:id="@+id/buttonMeat"
@@ -28,7 +29,8 @@
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:layout_weight="1"
-            android:text="Meat" />
+            android:text="Meat"
+            android:backgroundTint="@color/mirror2"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -42,7 +44,8 @@
             android:layout_gravity="center"
             android:layout_weight="1"
             android:text="Sea Food"
-            android:layout_marginRight="30dp"/>
+            android:layout_marginRight="30dp"
+            android:backgroundTint="@color/mirror2"/>
 
         <Button
             android:id="@+id/buttonSalads"
@@ -50,7 +53,8 @@
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:layout_weight="1"
-            android:text="Salads" />
+            android:text="Salads"
+            android:backgroundTint="@color/mirror2"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -64,7 +68,8 @@
             android:layout_gravity="center"
             android:layout_weight="1"
             android:text="Vegetarian"
-            android:layout_marginRight="30dp"/>
+            android:layout_marginRight="30dp"
+            android:backgroundTint="@color/mirror2"/>
 
         <Button
             android:id="@+id/buttonGlutenFree"
@@ -72,6 +77,7 @@
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:layout_weight="1"
-            android:text="Gluten Free" />
+            android:text="Gluten Free"
+            android:backgroundTint="@color/mirror2"/>
     </LinearLayout>
 </LinearLayout>
