@@ -59,7 +59,7 @@ public class WelcomePage extends AppCompatActivity {
                         Boolean checkUserPass = DBHelper.checkUsernamePassword(user, pass);
                         if(checkUserPass == true){
                             Toast.makeText(WelcomePage.this, "Sign in successfull!", Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(WelcomePage.this, MyAccount.class);
+                            Intent intent = new Intent(WelcomePage.this, MainPage.class);
                             startActivity(intent);
                         }else{
                             Toast.makeText(WelcomePage.this, "Invalid credentials", Toast.LENGTH_SHORT).show();

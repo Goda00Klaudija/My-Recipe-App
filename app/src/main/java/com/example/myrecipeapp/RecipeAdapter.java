@@ -57,7 +57,7 @@ class  RecipeVH extends RecyclerView.ViewHolder{
         textView_carbs = itemView.findViewById(R.id.textView_carbs);
         textView_fat = itemView.findViewById(R.id.textView_fat);
         textView_comment = itemView.findViewById(R.id.textView_comment);
-        imageView_food = itemView.findViewById(R.id.imageView_food);
+        imageView_food = itemView.findViewById(R.id.imageView_meal_image);
     }
 
     public RecipeVH linkAdapter(RecipeAdapter adapter){
