@@ -2,10 +2,13 @@ package com.example.myrecipeapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -16,6 +19,7 @@ public class WelcomePage extends AppCompatActivity {
     private Button loginBtn, registerBtn;
     private DBHelper DBHelper;
     private TextView forgotPassword;
+    private CheckBox checkBox;
 
 
     @Override
@@ -29,6 +33,13 @@ public class WelcomePage extends AppCompatActivity {
         loginBtn = findViewById(R.id.btnLogin);
         registerBtn = findViewById(R.id.btnMoveRegister);
         forgotPassword = findViewById(R.id.txtForgotPassword);
+        checkBox = findViewById(R.id.checkBox);
+
+        if (DBHelper.ifSaved() == 1){
+            username.setText(DBHelper.getUsername());
+            password.setText(DBHelper.getPassword());
+            checkBox.setChecked(true);
+        }
 
         goToRegister();
         login();
@@ -60,6 +71,12 @@ public class WelcomePage extends AppCompatActivity {
                         if(checkUserPass == true){
                             Toast.makeText(WelcomePage.this, "Sign in successfull!", Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(WelcomePage.this, MainPage.class);
+                            DBHelper.putUser(user);
+                            if (checkBox.isChecked()){
+                                DBHelper.saveCredentials(user,pass);
+                            } else {
+                                DBHelper.dropCredentials();
+                            }
                             startActivity(intent);
                         }else{
                             Toast.makeText(WelcomePage.this, "Invalid credentials", Toast.LENGTH_SHORT).show();

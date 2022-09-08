@@ -6,29 +6,34 @@ import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.fragment.app.Fragment;
+
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 
 public class  MyAccount extends AppCompatActivity {
 
     DrawerLayout drawerLayout;
-//     One Button
     Button BSelectImage;
     DBHelper dbHelper;
+    TextView nameSurname;
+    TextView email;
+    TextView changePassword;
 
-
-    // One Preview Image
     ImageView IVPreviewImage;
 
-    // constant to compare
-    // the activity result code
     int SELECT_PICTURE = 200;
 
     @Override
@@ -38,20 +43,38 @@ public class  MyAccount extends AppCompatActivity {
 
         dbHelper = new DBHelper(this);
 
-        // register the UI widgets with their appropriate IDs
         BSelectImage = findViewById(R.id.BSelectImage);
         IVPreviewImage = findViewById(R.id.IVPreviewImage);
         drawerLayout=findViewById(R.id.drawer_layout);
+        nameSurname = findViewById(R.id.txtNameSurname);
+        email = findViewById(R.id.txtEMail);
+        changePassword=findViewById(R.id.txtChangePassword);
 
-        // handle the Choose Image button to trigger
-        // the image chooser function
+        String user = dbHelper.getUser();
+        try {
+            Bitmap bitmap = dbHelper.getPhoto(user);
+            IVPreviewImage.setImageBitmap(bitmap);
+        } catch (Exception e){}
+
+        email.setText(dbHelper.getEmail(user));
+        nameSurname.setText(user);
+
+        changePassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               // Intent i = new Intent(MyAccount.this, change_password.class);
+               // startActivity(i);
+            }
+        });
+
         BSelectImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 imageChooser();
-                saveImage();
             }
         });
+
+
     }
 
     public void ClickTab(View view){
@@ -108,14 +131,27 @@ public class  MyAccount extends AppCompatActivity {
                 if (null != selectedImageUri) {
                     // update the preview image in the layout
                     IVPreviewImage.setImageURI(selectedImageUri);
+                    try {
+                        String user = dbHelper.getUser();
+                        Bitmap bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), selectedImageUri);
+                        byte[] bytesImage = getBytes(bitmap);
+                        if(dbHelper.ifExists(user) == 1){
+                            dbHelper.updateEntry(user, bytesImage);
+                        } else{
+                            dbHelper.addEntry(user, bytesImage);
+                        }
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
         }
     }
 
-    private void saveImage() {
-        String path = IVPreviewImage.getContext().getPackageResourcePath();
-        dbHelper.addPicture(path);
+    public static byte[] getBytes(Bitmap bitmap) {
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.PNG, 0, stream);
+        return stream.toByteArray();
     }
 
     @Override

@@ -1,15 +1,14 @@
 package com.example.myrecipeapp;
-import static android.content.ContentValues.TAG;
-
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.nfc.Tag;
-import android.util.Log;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 
-import androidx.annotation.Nullable;
+import java.io.ByteArrayOutputStream;
 
 
 public class DBHelper extends SQLiteOpenHelper {
@@ -38,6 +37,15 @@ public class DBHelper extends SQLiteOpenHelper {
                 COL5 + " BLOB)";
         db.execSQL(createTable);
 
+        createTable = "CREATE TABLE photo_table ( photoID TEXT, image BLOB);";
+        db.execSQL(createTable);
+
+        createTable = "CREATE TABLE user (userID TEXT);";
+        db.execSQL(createTable);
+
+        createTable = "CREATE TABLE rememberMe (user TEXT, pass TEXT);";
+        db.execSQL(createTable);
+
     }
 
     @Override
@@ -62,6 +70,61 @@ public class DBHelper extends SQLiteOpenHelper {
             return true;
         }
     }
+
+    public void saveCredentials(String user, String pass){
+        SQLiteDatabase db = this.getWritableDatabase();
+        String str = "DELETE FROM rememberMe;";
+        db.execSQL(str);
+        str = "INSERT INTO rememberMe (user,pass) VALUES ('"+user+"','"+pass+"');";
+        db.execSQL(str);
+    }
+
+    public void dropCredentials(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        String str = "DELETE FROM rememberMe;";
+        db.execSQL(str);
+    }
+
+    public void putUser(String user){
+        SQLiteDatabase db = this.getWritableDatabase();
+        String str = "DELETE FROM user;";
+        db.execSQL(str);
+        str = "INSERT INTO user (userID) VALUES ('"+user+"');";
+        db.execSQL(str);
+    }
+
+    public String getEmail(String user){
+        SQLiteDatabase db = this.getWritableDatabase();
+        String query = "SELECT EMAIL FROM accounts_table WHERE USERNAME = '"+user+"';";
+        Cursor cursor = db.rawQuery(query, null);
+        cursor.moveToFirst();
+        return  cursor.getString(0);
+    }
+
+    public String getUsername(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        String query = "SELECT user FROM rememberMe";
+        Cursor cursor = db.rawQuery(query, null);
+        cursor.moveToFirst();
+        return cursor.getString(0);
+    }
+
+    public String getPassword(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        String query = "SELECT pass FROM rememberMe";
+        Cursor cursor = db.rawQuery(query, null);
+        cursor.moveToFirst();
+        return cursor.getString(0);
+    }
+
+    public String getUser(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        String query = "SELECT * FROM user";
+        Cursor cursor = db.rawQuery(query, null);
+        cursor.moveToFirst();
+        return cursor.getString(0);
+    }
+
     public Boolean checkData(String dbEmail){
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery("SELECT * FROM accounts_table WHERE EMAIL = ?",new String[] {dbEmail});
@@ -81,18 +144,45 @@ public class DBHelper extends SQLiteOpenHelper {
         }
     }
 
-    public boolean addPicture(String dbPicture){
+    public void addEntry( String name, byte[] image) throws SQLiteException {
         SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues contentValues = new ContentValues();
-        contentValues.put(COL5, dbPicture);
+        ContentValues cv = new  ContentValues();
+        cv.put("photoID",    name);
+        cv.put("image",   image);
+        db.insert( "photo_table", null, cv );
+    }
 
-        long result = db.insert(TABLE_NAME, null, contentValues);
+    public void updateEntry( String name, byte[] image) throws SQLiteException {
+        SQLiteDatabase db = this.getWritableDatabase();
+        String strSQL = "DELETE FROM photo_table WHERE photoID = '"+name+"';";
+        db.execSQL(strSQL);
+        addEntry(name,image);
+    }
 
-        if(result == -1){
-            return false;
-        }else{
-            return true;
-        }
+    public int ifSaved() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        String query = "SELECT EXISTS(SELECT 1 FROM rememberMe);";
+        Cursor cursor = db.rawQuery(query, null);
+        cursor.moveToFirst();
+        return cursor.getInt(0);
+    }
+
+    public int ifExists(String name){
+        SQLiteDatabase db = this.getWritableDatabase();
+        String query ="SELECT EXISTS(SELECT 1 FROM photo_table WHERE photoID='"+name+"');";
+        Cursor cursor = db.rawQuery(query, null);
+        cursor.moveToFirst();
+        return cursor.getInt(0);
+
+    }
+    public Bitmap getPhoto(String name){
+        SQLiteDatabase db = this.getWritableDatabase();
+        String query = "select image FROM photo_table where photoID = '"+name+"'";
+        Cursor cursor = db.rawQuery(query, null);
+        cursor.moveToFirst();
+        byte[] bytesImage = cursor.getBlob(0);
+        cursor.close();
+        return BitmapFactory.decodeByteArray(bytesImage,0,bytesImage.length);
     }
 
 }
