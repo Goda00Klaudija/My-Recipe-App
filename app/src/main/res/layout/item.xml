@@ -3,9 +3,10 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardBackgroundColor="@color/white"
+    app:cardBackgroundColor="@color/trans"
     android:id="@+id/list_container"
     app:cardElevation="8dp"
+    app:cardCornerRadius="15dp"
     android:layout_margin="8dp">
     <LinearLayout
         android:id="@+id/mealBox"
@@ -27,7 +28,7 @@
             android:textSize="22sp"
             android:textStyle="bold"/>
         <ImageView
-            android:id="@+id/imageView_food"
+            android:id="@+id/imageView_meal_image"
             android:scaleType="centerCrop"
             android:layout_margin="8dp"
             android:layout_width="match_parent"

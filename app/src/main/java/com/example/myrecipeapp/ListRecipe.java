@@ -2,26 +2,26 @@ package com.example.myrecipeapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
-public class ListRecipe extends AppCompatActivity {
+public class ListRecipe extends AppCompatActivity{
 
-    private LinearLayout mealBox;
-
+    private CardView list_container;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list_recipe);
+        setContentView(R.layout.item);
 
-        mealBox = findViewById(R.id.mealBox);
+        list_container = findViewById(R.id.list_container);
 
         goToDetails();
     }
+
     private void goToDetails() {
-        mealBox.setOnClickListener(new View.OnClickListener() {
+        list_container.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(ListRecipe.this, RecipeDetailsActivity.class);
@@ -29,4 +29,5 @@ public class ListRecipe extends AppCompatActivity {
             }
         });
     }
+
 }

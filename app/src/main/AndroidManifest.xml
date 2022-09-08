@@ -13,12 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyRecipeApp"
         tools:targetApi="31">
-        <!-- <activity -->
-        <!-- android:name=".NavigationTab" -->
-        <!-- android:exported="true" -->
-        <!-- android:label="@string/title_activity_navigation_tab" -->
-        <!-- android:theme="@style/Theme.MyRecipeApp.NoActionBar" /> -->
-        <activity
+       <activity
             android:name=".ForgotPaassword"
             android:exported="false" />
         <activity
@@ -68,22 +63,25 @@
             android:name=".SeaFoodList"
             android:exported="false" />
         <activity
-            android:name=".ProgressBarAnimation"
+            android:name=".MyPantry"
             android:exported="false" />
         <activity
-            android:name=".LoadingScreen"
+            android:name=".MySavedRecipes"
             android:exported="false" />
-         <activity
-         android:name=".NavigationTab"
-         android:exported="true"
-         android:label="@string/title_activity_navigation"
-         android:theme="@style/Theme.MyRecipeApp.NoActionBar">
+        <activity
+            android:name=".ProgressBarAnimation"
+            android:exported="false" />
+
+        <activity
+            android:name=".LoadingScreen"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
          </activity>
+
     </application>
 
 </manifest>
