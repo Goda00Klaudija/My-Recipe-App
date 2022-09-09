@@ -11,11 +11,18 @@
     <LinearLayout
         android:id="@+id/mealBox"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="@drawable/wallpaper">
+        android:background="@color/white">
         <TextView
-            android:id="@+id/textView_title"
+            android:id="@+id/rec_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Id"
+            android:textSize="0.5dp"
+            android:textColor="@color/white" />
+        <TextView
+            android:id="@+id/textView_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ellipsize="marquee"
@@ -24,7 +31,7 @@
             android:scrollHorizontally="true"
             android:singleLine="true"
             android:text="Dish Name"
-            android:textColor="@color/grey"
+            android:textColor="@color/black"
             android:textSize="22sp"
             android:textStyle="bold"/>
 
@@ -39,75 +46,123 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_gravity="center"
+
+            <Space
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1">
+                android:layout_height="1dp"
+                android:layout_weight="1"/>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
                 <TextView
                     android:id="@+id/textView_calories"
                     android:textSize="14sp"
                     android:padding="8dp"
-                    android:text="100 Kcal"
-                    android:textColor="@color/white"
+                    android:text="100"
+                    android:textColor="@color/black"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Kcal"
+                    android:textColor="@color/black" />
             </LinearLayout>
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_gravity="center"
+
+            <Space
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1">
+                android:layout_height="1dp"
+                android:layout_weight="1"/>
+
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Protein:"
+                    android:textColor="@color/black" />
                 <TextView
                     android:id="@+id/textView_protein"
                     android:textSize="14sp"
                     android:padding="8dp"
-                    android:text="Protein: 20g"
-                    android:textColor="@color/white"
+                    android:text="20g"
+                    android:textColor="@color/black"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
             </LinearLayout>
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_gravity="center"
+
+            <Space
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1">
+                android:layout_height="1dp"
+                android:layout_weight="1"/>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Carbs:"
+                    android:textColor="@color/black" />
                 <TextView
                     android:id="@+id/textView_carbs"
                     android:textSize="14sp"
                     android:padding="8dp"
-                    android:text="Carbs: 5g"
-                    android:textColor="@color/white"
+                    android:text="5g"
+                    android:textColor="@color/black"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
             </LinearLayout>
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_gravity="center"
+
+            <Space
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1">
+                android:layout_height="1dp"
+                android:layout_weight="1"/>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fat:"
+                    android:textColor="@color/black" />
                 <TextView
                     android:id="@+id/textView_fat"
                     android:textSize="14sp"
                     android:padding="8dp"
-                    android:text="Fat: 30g"
-                    android:textColor="@color/white"
+                    android:text="30g"
+                    android:textColor="@color/black"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
             </LinearLayout>
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1"/>
+
         </LinearLayout>
-        <TextView
-            android:id="@+id/textView_comment"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="right"
-            android:padding="8dp"
-            android:text="You have all the ingredients"
-            android:textColor="@color/white"
-            android:textSize="14sp"/>
+
+        <!--        <TextView-->
+        <!--            android:id="@+id/textView_comment"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_gravity="right"-->
+        <!--            android:padding="8dp"-->
+        <!--            android:text="You have all the ingredients"-->
+        <!--            android:textColor="@color/white"-->
+        <!--            android:textSize="14sp" />-->
     </LinearLayout>
 </androidx.cardview.widget.CardView>
