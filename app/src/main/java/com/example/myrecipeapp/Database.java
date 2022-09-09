@@ -67,6 +67,39 @@ public class Database {
         return description;
     }
 
+    public String getProteins(String name){
+        String query="Select proteins from recepies where name = '"+name+"';";
+        Cursor cursor = mDB.rawQuery(query,null);
+        cursor.moveToFirst();
+        float temp = cursor.getFloat(0);
+        return String.valueOf(temp);
+    }
+
+    public String getCalories(String name){
+        String query="Select calories from recepies where name = '"+name+"';";
+        Cursor cursor = mDB.rawQuery(query,null);
+        cursor.moveToFirst();
+        float temp = cursor.getFloat(0);
+        return String.valueOf(temp);
+    }
+
+    public String getFat(String name){
+        String query="Select fat from recepies where name = '"+name+"';";
+        Cursor cursor = mDB.rawQuery(query,null);
+        cursor.moveToFirst();
+        float temp = cursor.getFloat(0);
+        return String.valueOf(temp);
+    }
+
+    public String getCarbs(String name){
+        String description = "";
+        String query="Select carbs from recepies where name = '"+name+"';";
+        Cursor cursor = mDB.rawQuery(query,null);
+        cursor.moveToFirst();
+        float temp = cursor.getFloat(0);
+        return String.valueOf(temp);
+    }
+
     public Bitmap getPhoto(String name){
         String query = "select photo FROM recepies where name = '"+name+"'";
         Cursor cursor = mDB.rawQuery(query, null);
