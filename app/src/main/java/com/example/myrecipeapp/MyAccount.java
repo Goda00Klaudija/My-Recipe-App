@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -70,6 +71,8 @@ public class  MyAccount extends AppCompatActivity {
         BSelectImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                final MediaPlayer mediaPlayer = MediaPlayer.create(MyAccount.this, R.raw.tap);
+                mediaPlayer.start();
                 imageChooser();
             }
         });

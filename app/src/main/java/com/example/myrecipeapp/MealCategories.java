@@ -1,5 +1,6 @@
 package com.example.myrecipeapp;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -34,6 +35,8 @@ public class MealCategories extends AppCompatActivity {
         btnVegetarian.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                final MediaPlayer mediaPlayer = MediaPlayer.create(MealCategories.this, R.raw.tap);
+                mediaPlayer.start();
                 Intent i = new Intent(MealCategories.this, VegetarianList.class);
                 startActivity(i);
             }
@@ -44,6 +47,8 @@ public class MealCategories extends AppCompatActivity {
         btnIngredient.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                final MediaPlayer mediaPlayer = MediaPlayer.create(MealCategories.this, R.raw.tap);
+                mediaPlayer.start();
                 Intent i = new Intent(MealCategories.this, IngredientList.class);
                 startActivity(i);
             }
@@ -54,6 +59,8 @@ public class MealCategories extends AppCompatActivity {
         btnSeaFood.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                final MediaPlayer mediaPlayer = MediaPlayer.create(MealCategories.this, R.raw.tap);
+                mediaPlayer.start();
                 Intent i = new Intent(MealCategories.this, SeaFoodList.class);
                 startActivity(i);
             }
@@ -64,6 +71,8 @@ public class MealCategories extends AppCompatActivity {
         btnGlutenFree.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                final MediaPlayer mediaPlayer = MediaPlayer.create(MealCategories.this, R.raw.tap);
+                mediaPlayer.start();
                 Intent i = new Intent(MealCategories.this, GlutenFreeList.class);
                 startActivity(i);
             }
@@ -74,6 +83,8 @@ public class MealCategories extends AppCompatActivity {
         btnMeat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                final MediaPlayer mediaPlayer = MediaPlayer.create(MealCategories.this, R.raw.tap);
+                mediaPlayer.start();
                 Intent i = new Intent(MealCategories.this, MeatList.class);
                 startActivity(i);
             }
@@ -84,6 +95,8 @@ public class MealCategories extends AppCompatActivity {
         btnSalads.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                final MediaPlayer mediaPlayer = MediaPlayer.create(MealCategories.this, R.raw.tap);
+                mediaPlayer.start();
                 Intent i = new Intent(MealCategories.this, SaladList.class);
                 startActivity(i);
             }

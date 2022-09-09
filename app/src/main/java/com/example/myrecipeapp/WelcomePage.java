@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -51,6 +52,8 @@ public class WelcomePage extends AppCompatActivity {
         registerBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                final MediaPlayer mediaPlayer = MediaPlayer.create(WelcomePage.this, R.raw.tap);
+                mediaPlayer.start();
                 Intent i = new Intent(WelcomePage.this, RegisterPage.class);
                 startActivity(i);
             }
@@ -60,7 +63,8 @@ public class WelcomePage extends AppCompatActivity {
             loginBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-
+                    final MediaPlayer mediaPlayer = MediaPlayer.create(WelcomePage.this, R.raw.tap);
+                    mediaPlayer.start();
                     String user = username.getText().toString();
                     String pass = password.getText().toString();
 
@@ -90,6 +94,8 @@ public class WelcomePage extends AppCompatActivity {
         forgotPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                final MediaPlayer mediaPlayer = MediaPlayer.create(WelcomePage.this, R.raw.tap);
+                mediaPlayer.start();
                 Intent intent = new Intent(WelcomePage.this, ForgotPaassword.class);
                 startActivity(intent);
             }

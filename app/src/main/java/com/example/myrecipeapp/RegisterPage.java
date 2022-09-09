@@ -3,6 +3,7 @@ package com.example.myrecipeapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -35,6 +36,8 @@ public class RegisterPage extends AppCompatActivity {
         buttonRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                final MediaPlayer mediaPlayer = MediaPlayer.create(RegisterPage.this, R.raw.tap);
+                mediaPlayer.start();
                 String dbEmail = edtTextRegisterEmail.getText().toString();
                 String dbUsername = edtTextRegisterUsername.getText().toString();
                 String dbPassword = edtTextRegisterPassword.getText().toString();
