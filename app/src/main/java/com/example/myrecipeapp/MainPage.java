@@ -5,17 +5,24 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+
+import java.util.ArrayList;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class MainPage extends AppCompatActivity {
 
     DrawerLayout drawerLayout;
     private LinearLayout DayBox;
     public Button btnAllRecipes, btnCategory;
+    public ImageView img;
+    public TextView dishName, mealDesc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +33,23 @@ public class MainPage extends AppCompatActivity {
         btnAllRecipes = findViewById(R.id.buttonAllRecipes);
         btnCategory = findViewById(R.id.buttonCategory);
         drawerLayout=findViewById(R.id.drawer);
+        img=findViewById(R.id.imageView_meal_image);
+        dishName=findViewById(R.id.textView_meal_name);
+        mealDesc=findViewById(R.id.textView_meal_method);
+
+        Database db = new Database(this);
+        db.open();
+
+        ArrayList<String> recipes = db.getAllRecipes();
+        int randomNum = ThreadLocalRandom.current().nextInt(0, recipes.size());
+        String name = recipes.get(randomNum);
+        dishName.setText(name);
+        img.setImageBitmap(db.getPhoto(name));
+        String s = db.getDescription(name);
+        s = s.substring(0, Math.min(s.length(), 150));
+        mealDesc.setText(s+"...");
+
+        db.close();
 
         goToAllRecipes();
         goToCategories();

@@ -38,7 +38,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:padding="5dp"
-            android:text="Recipe of the Day !"
+            android:text="Something you should try !"
             android:textColor="@color/white"
             android:textSize="25sp"
             android:textStyle="bold" />
@@ -72,12 +72,13 @@
                 android:textColor="@color/white"
                 android:textSize="20sp"
                 android:textStyle="bold" />
+
             <TextView
                 android:id="@+id/textView_meal_method"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_margin="0.7dp"
-                android:padding="28dp"
+                android:padding="0dp"
                 android:text="*summary*"
                 android:textColor="@color/white"
                 android:textSize="15sp"
