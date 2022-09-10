@@ -12,55 +12,67 @@
         app:titleTextColor="@color/white"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"/>
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <LinearLayout
-            android:orientation="vertical"
-            android:gravity="center"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
             <TextView
                 android:id="@+id/textView_meal_name"
-                android:text="Recipe Name"
-                android:textSize="20sp"
-                android:textColor="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:gravity="center"
                 android:padding="8dp"
-                android:textStyle="bold"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:text="Recipe Name"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
             <ImageView
                 android:id="@+id/imageView_meal_image"
-                android:layout_margin="8dp"
-                android:scaleType="centerCrop"
                 android:layout_width="match_parent"
-                android:layout_height="250dp"/>
+                android:layout_height="250dp"
+                android:layout_margin="8dp"
+                android:scaleType="centerCrop" />
+
             <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="8dp"
                 android:text="Ingredients"
-                android:textStyle="bold"
                 android:textColor="@color/white"
                 android:textSize="20sp"
-                android:padding="8dp"
-                android:gravity="center"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:textStyle="bold" />
 
             <ListView
                 android:id="@+id/listView_details"
                 android:layout_width="match_parent"
-                android:layout_height="200dp" />
+                android:layout_height="250dp" />
 
             <TextView
                 android:id="@+id/textView_meal_method"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:padding="8dp"
                 android:text="Method"
-                android:textStyle="bold"
                 android:textColor="@color/white"
                 android:textSize="20sp"
-                android:padding="8dp"
-                android:layout_margin="8dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView_method"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:textSize="18sp" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

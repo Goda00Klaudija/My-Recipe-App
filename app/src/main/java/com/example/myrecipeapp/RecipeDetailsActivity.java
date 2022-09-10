@@ -58,7 +58,7 @@ public class RecipeDetailsActivity extends AppCompatActivity {
 
     private void findViews() {
         this.textView_meal_name = (TextView)this.findViewById(R.id.textView_meal_name);
-        this.textView_meal_method = (TextView)this.findViewById(R.id.textView_meal_method);
+        this.textView_meal_method = (TextView)this.findViewById(R.id.textView_method);
         this.imageView_meal_image = (ImageView)this.findViewById(R.id.imageView_meal_image);
         this.list_meal_ingredients = (ListView)this.findViewById(R.id.listView_details);
     }
