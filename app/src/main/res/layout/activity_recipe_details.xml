@@ -45,11 +45,12 @@
                 android:gravity="center"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recycler_meal_ingredients"
-                android:layout_margin="8dp"
+
+            <ListView
+                android:id="@+id/listView_details"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="200dp" />
+
             <TextView
                 android:id="@+id/textView_meal_method"
                 android:text="Method"

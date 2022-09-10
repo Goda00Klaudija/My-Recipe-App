@@ -1,6 +1,7 @@
 package com.example.myrecipeapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,7 +28,7 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.ViewHolder
     public static class ViewHolder extends RecyclerView.ViewHolder{
         TextView theName, theCalories, theProtein, theCarbs, theFat, theRec_Id;
         //theComment;
-//        ImageView theMeal_image;
+        ImageView theMeal_image;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -37,8 +38,9 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.ViewHolder
             theProtein = itemView.findViewById(R.id.textView_protein);
             theCarbs = itemView.findViewById(R.id.textView_carbs);
             theFat = itemView.findViewById(R.id.textView_fat);
+
 //            theComment = itemView.findViewById(R.id.textView_comment);
-//            theMeal_image = itemView.findViewById(R.id.imageView_meal_image);
+            theMeal_image = itemView.findViewById(R.id.imageView_meal_image);
         }
     }
 
@@ -67,7 +69,10 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.ViewHolder
         viewHolder.theProtein.setText(""+recipe.getProteins());
         viewHolder.theCarbs.setText(""+recipe.getCarbs());
         viewHolder.theFat.setText(""+recipe.getFat());
-//        viewHolder.theMeal_image.setImageBitmap(recipe.getPhoto());
+
+        Database db = new Database(context);
+        db.open();
+        viewHolder.theMeal_image.setImageBitmap(db.getPhoto(""+recipe.getName()));
 //        viewHolder.theComment.setText(recipe.getComment());
     }
 
@@ -81,7 +86,9 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.ViewHolder
         public void onClick(View v){
             int itemPosition = recycler_list.getChildLayoutPosition(v);
             String item = recipeList.get(itemPosition).getName();
-            Toast.makeText(context, item, Toast.LENGTH_SHORT).show();
+            Intent i = new Intent(context, RecipeDetailsActivity.class);
+            i.putExtra("key",item);
+            context.startActivity(i);
         }
     }
 }

@@ -57,7 +57,9 @@ public class MainPage extends AppCompatActivity {
         DayBox.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainPage.this, RecipeDetailsActivity.class));
+                Intent i = new Intent(MainPage.this, RecipeDetailsActivity.class);
+                i.putExtra("key",name);
+                startActivity(i);
             }
         });
 

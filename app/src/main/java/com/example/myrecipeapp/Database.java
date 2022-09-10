@@ -125,6 +125,38 @@ public class Database {
         return Ingredients;
     }
 
+    public Cursor getAmountCursor(String name){
+        String query="select ing_to_rec.amount from ing_to_rec INNER JOIN ingridients on ing_to_rec.ingridient_id = ingridients.ing_id INNER JOIN recepies on recepies.rec_id = ing_to_rec.recepie_id where recepies.name = '"+name+"';";
+        return mDB.rawQuery(query,null);
+    }
+
+    public ArrayList getAmount(String name){
+        ArrayList<String> Ingredients = new ArrayList<String>();
+        Cursor cursor = this.getAmountCursor(name);
+        while(cursor.moveToNext()) {
+            int index;
+            index = cursor.getColumnIndexOrThrow("amount");
+            Ingredients.add(cursor.getString(index));
+        }
+        return Ingredients;
+    }
+
+    public Cursor getMeasurementCursor(String name){
+        String query="select ing_to_rec.mesurment from ing_to_rec INNER JOIN ingridients on ing_to_rec.ingridient_id = ingridients.ing_id INNER JOIN recepies on recepies.rec_id = ing_to_rec.recepie_id where recepies.name = '"+name+"';";
+        return mDB.rawQuery(query,null);
+    }
+
+    public ArrayList getMeasurement(String name){
+        ArrayList<String> Ingredients = new ArrayList<String>();
+        Cursor cursor = this.getMeasurementCursor(name);
+        while(cursor.moveToNext()) {
+            int index;
+            index = cursor.getColumnIndexOrThrow("mesurment");
+            Ingredients.add(cursor.getString(index));
+        }
+        return Ingredients;
+    }
+
     public Cursor getAllRecipesCursor(){
         String query="select name from recepies";
         return mDB.rawQuery(query,null);

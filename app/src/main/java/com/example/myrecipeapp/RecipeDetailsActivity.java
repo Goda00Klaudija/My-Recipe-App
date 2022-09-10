@@ -2,19 +2,22 @@ package com.example.myrecipeapp;
 
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class RecipeDetailsActivity extends AppCompatActivity {
     int id;
 
     public TextView textView_meal_name, textView_meal_method;
     public ImageView imageView_meal_image;
-    public RecyclerView recycler_meal_ingredients;
+    public ListView list_meal_ingredients;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +29,8 @@ public class RecipeDetailsActivity extends AppCompatActivity {
 
         int width = dm.widthPixels;
         int height = dm.heightPixels;
+        Bundle extras = getIntent().getExtras();
+        String name = extras.getString("key");
 
         getWindow().setLayout((int)(width*.92),(int)(height*.97));
 
@@ -34,17 +39,27 @@ public class RecipeDetailsActivity extends AppCompatActivity {
         //for testing purposes all code below
         Database db = new Database(this);
         db.open();
-        textView_meal_method.setText(db.getDescription("Quick spring gnocchi"));
-        db.deleteFavorites("Quick spring gnocchi");
-        ArrayList<String> search = db.filterFavorites();
-        textView_meal_name.setText(search.toString());
-        imageView_meal_image.setImageBitmap(db.getPhoto("Quick spring gnocchi"));
+
+        textView_meal_method.setText(db.getDescription(name));
+        textView_meal_name.setText(name);
+        imageView_meal_image.setImageBitmap(db.getPhoto(name));
+        ArrayList<String> ingredients= db.getIngredients(name);
+        ArrayList<String> amount = db.getAmount(name);
+        ArrayList<String> measurement = db.getMeasurement(name);
+        String[] ing = new String[ingredients.size()];
+        for (int i = 0; i<ingredients.size();i++){
+            ing[i] = ingredients.get(i) +" "+ amount.get(i) +" "+ measurement.get(i);
+        }
+        ArrayAdapter adapter = new ArrayAdapter<String>(this,
+                R.layout.activity_listview, ing);
+        list_meal_ingredients.setAdapter(adapter);
+
     }
 
     private void findViews() {
         this.textView_meal_name = (TextView)this.findViewById(R.id.textView_meal_name);
         this.textView_meal_method = (TextView)this.findViewById(R.id.textView_meal_method);
         this.imageView_meal_image = (ImageView)this.findViewById(R.id.imageView_meal_image);
-        this.recycler_meal_ingredients = (RecyclerView)this.findViewById(R.id.recycler_meal_ingredients);
+        this.list_meal_ingredients = (ListView)this.findViewById(R.id.listView_details);
     }
 }
