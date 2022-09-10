@@ -100,9 +100,9 @@ public class  MyAccount extends AppCompatActivity {
         MainPage.redirectActivity(this,MyPantry.class);
     }
 
-    public void ClickMySavedRecipes(View view){
-        MainPage.redirectActivity(this,MySavedRecipes.class);
-    }
+//    public void ClickMySavedRecipes(View view){
+//        MainPage.redirectActivity(this,MySavedRecipes.class);
+//    }
 
 //     this function is triggered when
 //     the Select Image Button is clicked

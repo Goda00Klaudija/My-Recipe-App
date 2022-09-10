@@ -38,7 +38,7 @@ public class MyPantry extends AppCompatActivity {
         recreate();
     }
 
-    public void ClickMySavedRecipes(View view){
-        MainPage.redirectActivity(this,MySavedRecipes.class);
-    }
+//    public void ClickMySavedRecipes(View view){
+//        MainPage.redirectActivity(this,MySavedRecipes.class);
+//    }
 }

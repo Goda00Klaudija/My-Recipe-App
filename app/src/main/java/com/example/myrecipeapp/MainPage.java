@@ -20,7 +20,8 @@ public class MainPage extends AppCompatActivity {
 
     DrawerLayout drawerLayout;
     private LinearLayout DayBox;
-    public Button btnAllRecipes, btnCategory;
+    public Button btnAllRecipes;
+//            btnCategory;
     public ImageView img;
     public TextView dishName, mealDesc;
 
@@ -31,7 +32,7 @@ public class MainPage extends AppCompatActivity {
 
         DayBox = findViewById(R.id.mainBox);
         btnAllRecipes = findViewById(R.id.buttonAllRecipes);
-        btnCategory = findViewById(R.id.buttonCategory);
+//        btnCategory = findViewById(R.id.buttonCategory);
         drawerLayout=findViewById(R.id.drawer);
         img=findViewById(R.id.imageView_meal_image);
         dishName=findViewById(R.id.textView_meal_name);
@@ -52,7 +53,7 @@ public class MainPage extends AppCompatActivity {
         db.close();
 
         goToAllRecipes();
-        goToCategories();
+//        goToCategories();
 
         DayBox.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -96,9 +97,9 @@ public class MainPage extends AppCompatActivity {
         redirectActivity(this,MyPantry.class);
     }
 
-    public void ClickMySavedRecipes(View view){
-        redirectActivity(this,MySavedRecipes.class);
-    }
+//    public void ClickMySavedRecipes(View view){
+//        redirectActivity(this,MySavedRecipes.class);
+//    }
 
 //    public void ClickSettings(View view){
 //        redirectActivity(this,);
@@ -123,18 +124,18 @@ public class MainPage extends AppCompatActivity {
         });
     }
 
-    private void goToCategories() {
-        btnCategory.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                final MediaPlayer mediaPlayer = MediaPlayer.create(MainPage.this, R.raw.tap);
-                mediaPlayer.start();
-                Intent i = new Intent(MainPage.this, MealCategories.class);
-                startActivity(i);
-
-            }
-        });
-    }
+//    private void goToCategories() {
+//        btnCategory.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                final MediaPlayer mediaPlayer = MediaPlayer.create(MainPage.this, R.raw.tap);
+//                mediaPlayer.start();
+//                Intent i = new Intent(MainPage.this, MealCategories.class);
+//                startActivity(i);
+//
+//            }
+//        });
+//    }
 
     @Override
     protected void onPause(){

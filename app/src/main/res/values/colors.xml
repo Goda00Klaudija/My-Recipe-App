@@ -7,6 +7,6 @@
     <color name="trans">#00673AB7</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="mirror">#15FF5722</color>
+    <color name="mirror">#30FFFFFF</color>
     <color name="mirror2">#16000000</color>
 </resources>

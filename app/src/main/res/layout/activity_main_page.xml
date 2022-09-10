@@ -19,7 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:layout_margin="4dp"
-            android:backgroundTint="@color/trans"
+            android:backgroundTint="@color/mirror2"
             app:cardElevation="8dp">
             <androidx.appcompat.widget.SearchView
                 android:id="@+id/searchView_home"
@@ -89,7 +89,8 @@
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:orientation="horizontal"
-            android:layout_margin="30dp">
+            android:layout_margin="10dp">
+<!--            android:layout_margin="30dp"-->
 <!--            <Button-->
 <!--                android:id="@+id/buttonCategory"-->
 <!--                android:layout_width="130dp"-->
@@ -102,7 +103,7 @@
 
             <Button
                 android:id="@+id/buttonAllRecipes"
-                android:layout_width="130dp"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:layout_weight="1"
