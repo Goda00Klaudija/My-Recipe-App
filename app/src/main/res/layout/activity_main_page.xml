@@ -87,18 +87,18 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="130dp"
+            android:layout_height="80dp"
             android:orientation="horizontal"
             android:layout_margin="30dp">
-            <Button
-                android:id="@+id/buttonCategory"
-                android:layout_width="130dp"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:text="Search By Category"
-                android:layout_marginRight="30dp"
-                android:backgroundTint="@color/mirror2"/>
+<!--            <Button-->
+<!--                android:id="@+id/buttonCategory"-->
+<!--                android:layout_width="130dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:layout_weight="1"-->
+<!--                android:text="Search By Category"-->
+<!--                android:layout_marginRight="30dp"-->
+<!--                android:backgroundTint="@color/mirror2"/>-->
 
             <Button
                 android:id="@+id/buttonAllRecipes"
