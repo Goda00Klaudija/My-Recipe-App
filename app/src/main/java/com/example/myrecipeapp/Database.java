@@ -173,6 +173,22 @@ public class Database {
         return recipes;
     }
 
+    public Cursor getAllIngredientsCursor(){
+        String query="select name from ingridients; ";
+        return mDB.rawQuery(query,null);
+    }
+
+    public ArrayList getAllIngredients(){
+        ArrayList<String> Ingredients = new ArrayList<String>();
+        Cursor cursor = this.getAllIngredientsCursor();
+        while(cursor.moveToNext()) {
+            int index;
+            index = cursor.getColumnIndexOrThrow("name");
+            Ingredients.add(cursor.getString(index));
+        }
+        return Ingredients;
+    }
+
     public Cursor getSearchedRecipesCursor(String name){
         String query="select name from recepies where name like '%"+name+"%';";
         return mDB.rawQuery(query,null);

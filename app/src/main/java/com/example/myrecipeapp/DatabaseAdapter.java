@@ -5,10 +5,7 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.graphics.Bitmap;
 import android.widget.Toast;
-
-import androidx.appcompat.widget.SearchView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,6 +30,58 @@ public class DatabaseAdapter {
 
         // DatabaseHelper.KEY_PHOTO, DatabaseHelper.KEY_DES, ; DatabaseHelper.KEY_FAVE, ; DatabaseHelper.KEY_CAT1, DatabaseHelper.KEY_CAT2, DatabaseHelper.KEY_CAT3
         Cursor cursor = db.query(DatabaseHelper.TABLE_NAME, columns,null, null,null, null, null, null);
+        List<RecipesCards> recipesList = new ArrayList<>();
+        while(cursor.moveToNext()){
+            //first column: rec_id, an INTEGER so int
+            int index1 = cursor.getColumnIndex(DatabaseHelper.KEY_RECID);
+            int recid = cursor.getInt(index1);
+            //second column: type: BLOB so idk...
+//            int index2 = cursor.getColumnIndex(DatabaseHelper.KEY_PHOTO);
+//            Bitmap photo = cursor.getPhoto(index2); //when i make this into getPhoto, throws out error.
+            //third column: name, a TEXT so string
+            int index3 = cursor.getColumnIndex(DatabaseHelper.KEY_NAME);
+            String name = cursor.getString(index3);
+//            //fourth column: description, a TEXT so string
+//            int index4 = cursor.getColumnIndex(DatabaseHelper.KEY_DES);
+//            String description = cursor.getString(index4);
+//            //firth column: an is_favourite, an INTEGER so int
+//            int index5 = cursor.getColumnIndex(DatabaseHelper.KEY_FAVE);
+//            int favourite = cursor.getInt(index5);
+            //sixth column: calories, a REAL so idk, try string
+            int index6 = cursor.getColumnIndex(DatabaseHelper.KEY_CAL);
+            String calories = cursor.getString(index6);
+            //seventh column: proteins a REAL so idk, try string
+            int index7 = cursor.getColumnIndex(DatabaseHelper.KEY_PROTEINS);
+            String proteins = cursor.getString(index7);
+            //eigth column: fat a REAL so idk, try string
+            int index8 = cursor.getColumnIndex(DatabaseHelper.KEY_FAT);
+            String fat = cursor.getString(index8);
+            //ninth column: carbs a REAL so idk, try string
+            int index9 = cursor.getColumnIndex(DatabaseHelper.KEY_CARBS);
+            String carbs = cursor.getString(index9);
+//            //tenth column: category1, a TEXT so string
+//            int index10 = cursor.getColumnIndex(DatabaseHelper.KEY_CAT1);
+//            String category1 = cursor.getString(index10);
+//            //eleventh column: category2, a TEXT so string
+//            int index11 = cursor.getColumnIndex(DatabaseHelper.KEY_CAT2);
+//            String category2 = cursor.getString(index11);
+//            //twelfth column: category3, a TEXT so string
+//            int index12 = cursor.getColumnIndex(DatabaseHelper.KEY_CAT3);
+//            String category3 = cursor.getString(index12);
+
+            RecipesCards recipe = new RecipesCards(recid, name, calories, proteins, fat, carbs);
+            recipesList.add(recipe);
+        }
+        return recipesList;
+    }
+
+    public List<RecipesCards> getSearchedRecipes(String name_serc){
+        String columns[] = {DatabaseHelper.KEY_RECID, DatabaseHelper.KEY_NAME,
+                DatabaseHelper.KEY_CAL, DatabaseHelper.KEY_PROTEINS, DatabaseHelper.KEY_FAT, DatabaseHelper.KEY_CARBS};
+
+        // DatabaseHelper.KEY_PHOTO, DatabaseHelper.KEY_DES, ; DatabaseHelper.KEY_FAVE, ; DatabaseHelper.KEY_CAT1, DatabaseHelper.KEY_CAT2, DatabaseHelper.KEY_CAT3
+        String query = "SELECT rec_id, name, calories, proteins, fat, carbs FROM recepies where name like '%"+name_serc+"%';";
+        Cursor cursor = db.rawQuery(query,null);
         List<RecipesCards> recipesList = new ArrayList<>();
         while(cursor.moveToNext()){
             //first column: rec_id, an INTEGER so int

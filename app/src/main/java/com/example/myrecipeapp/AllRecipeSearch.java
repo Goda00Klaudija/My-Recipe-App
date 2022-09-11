@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -25,6 +26,7 @@ public class AllRecipeSearch extends AppCompatActivity {
     RecyclerView recycler_list;
     RecipeAdapter recipeAdapter;
     RecyclerView.LayoutManager layoutManager;
+    TextView textAllRec;
     List<RecipesCards> recipesList = new ArrayList<>();
 
     //------------------------------------
@@ -41,6 +43,7 @@ public class AllRecipeSearch extends AppCompatActivity {
 
         //Needed for Navigation
         drawerLayout = findViewById(R.id.drawer_layout4);
+        textAllRec = findViewById(R.id.text_allRec);
 
 //        //For SearchView
 //        searchView = findViewById(R.id.searchView_home);
@@ -106,7 +109,7 @@ public class AllRecipeSearch extends AppCompatActivity {
         //------------------------------------
 
         //Connecting to DB
-        DBHelperRecipes.copyDB(this);
+        //DBHelperRecipes.copyDB(this);
         databaseAdapter = new DatabaseAdapter(this);
         recipesList = databaseAdapter.getAllRecipes();
         recycler_list = findViewById(R.id.recycler_list);
@@ -120,8 +123,23 @@ public class AllRecipeSearch extends AppCompatActivity {
     //------------------------------------
     //Attempt 400 For SearchView
     private void startSearch(String text) {
-        recipeAdapter = new RecipeAdapter(this,databaseAdapter.getRecipeByName(text));
+        Database db = new Database(this);
+        db.open();
+        List<RecipesCards> recipesList = databaseAdapter.getSearchedRecipes(text);
+        recipeAdapter = new RecipeAdapter(this,recipesList,recycler_list);
         recycler_list.setAdapter(recipeAdapter);
+//        DBHelperRecipes.copyDB(this);
+//        databaseAdapter = new DatabaseAdapter(this);
+//        Database db = new Database(this);
+//        db.open();
+//        recipesList = db.getSearchedRecipes(text);
+//        textAllRec.setText(recipesList.toString());
+//        recycler_list = findViewById(R.id.recycler_list);
+//        recycler_list.setHasFixedSize(true);
+//        layoutManager = new LinearLayoutManager(this);
+//        recycler_list.setLayoutManager(layoutManager);
+//        recipeAdapter = new RecipeAdapter(this, recipesList, recycler_list);
+//        recycler_list.setAdapter(recipeAdapter);
     }
 
     private void loadSuggestedList() {
