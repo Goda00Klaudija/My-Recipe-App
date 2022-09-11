@@ -1,21 +1,41 @@
 package com.example.myrecipeapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 
 public class MyPantry extends AppCompatActivity {
+
+    public TextView btnAdd;
     DrawerLayout drawerLayout;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_pantry);
 
+        btnAdd = findViewById(R.id.add);
+
+        //Needed for Navigation
         drawerLayout = findViewById(R.id.drawer_layout2);
+
+        goToAdd();
+    }
+
+    private void goToAdd() {
+        btnAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MyPantry.this, IngredientList.class);
+                startActivity(intent);
+            }
+        });
     }
 
     public void ClickTab(View view){
@@ -38,7 +58,9 @@ public class MyPantry extends AppCompatActivity {
         recreate();
     }
 
-//    public void ClickMySavedRecipes(View view){
-//        MainPage.redirectActivity(this,MySavedRecipes.class);
-//    }
+    @Override
+    protected void onPause(){
+        super.onPause();
+        MainPage.closeDrawer(drawerLayout);
+    }
 }

@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/wallpaper"
     android:id="@+id/drawer_layout2"
     tools:context=".MyPantry">
@@ -13,23 +14,63 @@
         android:orientation="vertical">
         <include
             layout="@layout/mainpage_toolbar"/>
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/MyPantry"
+                    android:textColor="@color/white"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="My Pantry"
-            android:textSize="50sp"
-            android:textColor="@color/black"
-            android:gravity="center"/>
+            android:layout_height="wrap_content"
+            android:text="My Ingredients:"
+            android:layout_margin="10dp"
+            android:textColor="@color/white"
+            android:textSize="18dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_pantryIngredients"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:layout_margin="10dp" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/mirror2"
+            app:cardCornerRadius="70dp"
+            android:layout_gravity="end"
+            android:layout_margin="30dp">
+            <TextView
+                android:id="@+id/add"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_add"/>
+        </androidx.cardview.widget.CardView>
+
     </LinearLayout>
 
     <RelativeLayout
-        android:layout_width="309dp"
+        android:layout_width="250dp"
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:background="@color/white">
 
-        <include
-            layout="@layout/mainpage_navigation_tab" />
+        <include layout="@layout/mainpage_navigation_tab" />
     </RelativeLayout>
 
 
