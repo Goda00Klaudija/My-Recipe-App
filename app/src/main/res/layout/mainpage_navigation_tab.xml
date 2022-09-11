@@ -45,7 +45,7 @@
             android:layout_weight="1"
             android:text="Home"
             android:padding="12dp"
-            android:textStyle="normal"
+            android:textColor="@color/black"
             android:layout_marginStart="16dp" />
     </LinearLayout>
 
@@ -60,7 +60,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="My Account"
-            android:textStyle="normal"
+            android:textColor="@color/black"
             android:padding="12dp"
             android:layout_marginStart="16dp"/>
     </LinearLayout>
@@ -76,7 +76,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="My Pantry"
-            android:textStyle="normal"
+            android:textColor="@color/black"
             android:padding="12dp"
             android:layout_marginStart="16dp"/>
     </LinearLayout>

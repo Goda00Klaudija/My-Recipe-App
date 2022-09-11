@@ -23,7 +23,12 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.ViewHolder
     List<RecipesCards> recipeList;
     RecyclerView recycler_list;
 
+
+    //SearchView
+    List<RecipesCards> recipeByName;
+
     final View.OnClickListener onClickListener = new MyOnClickListener();
+
 
     public static class ViewHolder extends RecyclerView.ViewHolder{
         TextView theName, theCalories, theProtein, theCarbs, theFat, theRec_Id;
@@ -48,6 +53,12 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.ViewHolder
         this.context = context;
         this.recipeList = recipeList;
         this.recycler_list = recycler_list;
+    }
+
+    //SearchView
+    public RecipeAdapter(AllRecipeSearch context, List<RecipesCards> recipeByName) {
+        this.context = context;
+        this.recipeByName = recipeByName;
     }
 
     @NonNull

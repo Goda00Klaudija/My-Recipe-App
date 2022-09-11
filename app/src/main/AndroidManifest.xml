@@ -17,6 +17,15 @@
             android:name=".ForgotPaassword"
             android:exported="false" />
         <activity
+            android:name=".RecipeAdapter"
+            android:exported="false" />
+        <activity
+            android:name=".RecipesCards"
+            android:exported="false" />
+        <activity
+            android:name=".DatabaseAdapter"
+            android:exported="false" />
+        <activity
             android:name=".MyAccount"
             android:exported="false" />
         <activity

@@ -20,63 +20,69 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <RelativeLayout
-                android:gravity="center_vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
                     android:text="All Recipes"
                     android:textColor="@color/white"
                     android:textSize="24sp"
                     android:textStyle="normal"
-                    android:gravity="center" />
-
+                    android:gravity="center"
+                    />
             </RelativeLayout>
 
         </androidx.appcompat.widget.Toolbar>
 
-        <androidx.cardview.widget.CardView
-            app:cardElevation="8dp"
-            app:cardBackgroundColor="@color/mirror2"
-            android:layout_margin="8dp"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize">
-            <androidx.appcompat.widget.SearchView
-                android:id="@+id/searchView_home"
-                app:queryHint="Search for recipe..."
-                app:iconifiedByDefault="false"
-                app:searchIcon="@drawable/ic_search"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"/>
+<!--        <androidx.cardview.widget.CardView-->
+<!--            app:cardElevation="8dp"-->
+<!--            app:cardBackgroundColor="@color/mirror2"-->
+<!--            android:layout_margin="8dp"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="?attr/actionBarSize">-->
+
+<!--            <androidx.appcompat.widget.SearchView-->
+<!--                android:id="@+id/searchView_home"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:gravity="center"-->
+<!--                app:iconifiedByDefault="false"-->
+<!--                app:queryHint="Search for recipe..."-->
+<!--                app:searchIcon="@drawable/ic_search" />-->
             <!--            <Spinner-->
             <!--                android:id="@+id/spinner_tab"-->
             <!--                android:layout_width="wrap_content"-->
             <!--                android:layout_height="match_parent"-->
             <!--                android:layout_alignParentEnd="true"-->
             <!--                android:gravity="center" />-->
-        </androidx.cardview.widget.CardView>
+<!--        </androidx.cardview.widget.CardView>-->
+
+        <com.mancj.materialsearchbar.MaterialSearchBar
+            android:id="@+id/searchView_home"
+            android:layout_alignParentTop="true"
+            android:layout_width="match_parent"
+            app:mt_speechMode="false"
+            app:mt_hint="Search for recipe..."
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_list"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="4dp"/>
-
     </LinearLayout>
 
-    <RelativeLayout
-        android:layout_width="309dp"
-        android:layout_height="match_parent"
-        android:background="@color/white"
-        android:layout_gravity="start">
+            <RelativeLayout
+                android:layout_width="309dp"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:layout_gravity="start">
 
-        <include layout="@layout/mainpage_navigation_tab" />
-    </RelativeLayout>
+                <include layout="@layout/mainpage_navigation_tab" />
+            </RelativeLayout>
 
-</androidx.drawerlayout.widget.DrawerLayout>
+        </androidx.drawerlayout.widget.DrawerLayout>
 
 
