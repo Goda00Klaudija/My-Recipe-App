@@ -39,6 +39,25 @@ public class IngredientDatabaseAdapter {
         return ingredientList;
     }
 
+    public List<IngredientCards> getSearchedIngredients(String name_serc){
+        String columns[] = {DatabaseHelper.KEY_INGID, DatabaseHelper.KEY_NAME};
+        String query = "SELECT ing_id, name FROM ingridients where name like '%"+name_serc+"%';";
+        Cursor cursor = db.rawQuery(query,null);
+        List<IngredientCards> ingredientList = new ArrayList<>();
+        while(cursor.moveToNext()){
+            //first column: rec_id, an INTEGER so int
+            int index1 = cursor.getColumnIndex(DatabaseHelper.KEY_INGID);
+            int ingid = cursor.getInt(index1);
+            //third column: name, a TEXT so string
+            int index3 = cursor.getColumnIndex(DatabaseHelper.KEY_NAME);
+            String name = cursor.getString(index3);
+
+            IngredientCards ingredient = new IngredientCards(ingid, name);
+            ingredientList.add(ingredient);
+        }
+        return ingredientList;
+    }
+
     //Function to all recipe's name
     public List<String> getNames(){
         String columns[] = {DatabaseHelper.KEY_NAME};

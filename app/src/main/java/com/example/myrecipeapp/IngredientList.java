@@ -124,7 +124,10 @@ public class IngredientList extends AppCompatActivity {
     //------------------------------------
     //Attempt 400 For SearchView
     private void startSearch(String text) {
-        ingredientAdapter = new IngredientAdapter(this,ingredientDatabaseAdapter.getIngredientByName(text));
+        Database db = new Database(this);
+        db.open();
+        List<IngredientCards> ingredientList = ingredientDatabaseAdapter.getSearchedIngredients(text);
+        ingredientAdapter = new IngredientAdapter(this,ingredientList,recycler_ingredientList);
         recycler_ingredientList.setAdapter(ingredientAdapter);
     }
 

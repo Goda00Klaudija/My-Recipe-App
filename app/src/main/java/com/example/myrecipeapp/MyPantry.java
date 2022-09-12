@@ -13,6 +13,7 @@ public class MyPantry extends AppCompatActivity {
 
     public TextView btnAdd;
     DrawerLayout drawerLayout;
+    public TextView username_tab;
 
 
     @Override
@@ -21,6 +22,10 @@ public class MyPantry extends AppCompatActivity {
         setContentView(R.layout.activity_my_pantry);
 
         btnAdd = findViewById(R.id.add);
+
+        username_tab = findViewById(R.id.username_tab);
+        DBHelper dbHelper = new DBHelper(this);
+        username_tab.setText(dbHelper.getUsername());
 
         //Needed for Navigation
         drawerLayout = findViewById(R.id.drawer_layout2);

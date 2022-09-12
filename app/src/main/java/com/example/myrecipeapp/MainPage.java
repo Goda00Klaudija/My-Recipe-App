@@ -24,6 +24,7 @@ public class MainPage extends AppCompatActivity {
 //            btnCategory;
     public ImageView img;
     public TextView dishName, mealDesc;
+    public TextView username_tab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,9 +38,15 @@ public class MainPage extends AppCompatActivity {
         img=findViewById(R.id.imageView_meal_image);
         dishName=findViewById(R.id.textView_meal_name);
         mealDesc=findViewById(R.id.textView_meal_method);
+        username_tab = findViewById(R.id.username_tab);
+
 
         Database db = new Database(this);
         db.open();
+
+        DBHelper dbHelper = new DBHelper(this);
+
+        username_tab.setText(dbHelper.getUsername());
 
         ArrayList<String> recipes = db.getAllRecipes();
         int randomNum = ThreadLocalRandom.current().nextInt(0, recipes.size());

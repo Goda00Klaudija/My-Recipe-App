@@ -1,9 +1,4 @@
 package com.example.myrecipeapp;
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.lifecycle.LifecycleOwner;
-import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -11,15 +6,13 @@ import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import androidx.fragment.app.Fragment;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -49,7 +42,7 @@ public class  MyAccount extends AppCompatActivity {
         drawerLayout=findViewById(R.id.drawer_layout);
         nameSurname = findViewById(R.id.txtNameSurname);
         email = findViewById(R.id.txtEMail);
-        changePassword=findViewById(R.id.txtChangePassword);
+        //changePassword=findViewById(R.id.txtChangePassword);
 
         String user = dbHelper.getUser();
         try {
@@ -60,13 +53,13 @@ public class  MyAccount extends AppCompatActivity {
         email.setText(dbHelper.getEmail(user));
         nameSurname.setText(user);
 
-        changePassword.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-               // Intent i = new Intent(MyAccount.this, change_password.class);
-               // startActivity(i);
-            }
-        });
+//        changePassword.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//               // Intent i = new Intent(MyAccount.this, change_password.class);
+//               // startActivity(i);
+//            }
+//        });
 
         BSelectImage.setOnClickListener(new View.OnClickListener() {
             @Override
